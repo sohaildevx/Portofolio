@@ -32,7 +32,7 @@ export const projects =[
     {
        id:3,
        title:"Vidora",
-       description:"AI-powered media SaaS — video upload with auto-compression, subtitle generation via OpenAI Whisper, and smart image cropping for social media. Built with Next.js, Cloudinary, and PostgreSQL.",
+       description:"AI-powered media SaaS featuring smart reel generation, auto-compression, subtitle generation via OpenAI Whisper, and intelligent image formatting. Built with Next.js, Cloudinary, and PostgreSQL.",
        imageUrl:"/vidora.png",
        projectUrl:"https://cloudinary-saas.vercel.app/",
        githubUrl:"https://github.com/sohaildevx/vidora.git",
@@ -40,6 +40,14 @@ export const projects =[
     },
     {
         id:4,
+        title:"ArzaAi",
+        description:"Built a full-stack AI legal SaaS that generates Marathi legal documents across 20+ categories, including affidavits, FIR requests, complaints, and official applications. Implemented GPT-4o powered workflows, secure authentication, document management, and Razorpay-based credit billing using Next.js, PostgreSQL, and Prisma.",
+        imageUrl:"/arzaAi.png",
+        githubUrl:"https://github.com/sohaildevx/ArzaAi.git",
+        technologies:["Next.js","TypeScript","Prisma","PostgreSQL","TailwindCSS","shadcn/ui","OpenAI GPT-4o API","Razorpay"]
+    },
+    {
+        id:5,
         title:"Deal-Drop",
         description:"Smart price tracker that monitors e-commerce products and alerts you when prices drop. Built with Next.js & Supabase.",
         imageUrl:"/dealDrop.png",
@@ -48,7 +56,7 @@ export const projects =[
         technologies:["Next.js","Supabase","TailwindCSS","firecrawl"]
     },
     {
-        id:5,
+        id:6,
         title:"Devin-Ai",
         description:"Full-stack AI Chatbot built with the MERN stack. Supports dynamic conversations, API-powered AI responses, and a responsive modern interface.",
         imageUrl:"/ai-Team-ChatBot.png",
@@ -56,7 +64,7 @@ export const projects =[
         technologies:["React","Node.js","Express","OpenAI GPT-4 API"]
     },
     {
-        id:6,
+        id:7,
         title:"Ai-Code-Reviewer",
         description:"AI code reviewer with OpenAi, Gemini & Hugging Face. Instant feedback on quality, performance & security using Monaco editor. React + Node.js",
         imageUrl:"/Ai-CodeReview.png",
@@ -64,7 +72,7 @@ export const projects =[
         technologies:["React","Node.js","Express","OpenAI","Monaco Editor","Hugging Face","Gemini API"]
     },
     {
-        id:7,
+        id:8,
         title:"ChessGame",
         description:"Real-time multiplayer chess game built with Node.js, Express, Socket.IO, and Chess.js.",
         imageUrl:"/chessgame.png",
