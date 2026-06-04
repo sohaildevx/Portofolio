@@ -43,6 +43,7 @@ export const projects =[
         title:"ArzaAi",
         description:"Built a full-stack AI legal SaaS that generates Marathi legal documents across 20+ categories, including affidavits, FIR requests, complaints, and official applications. Implemented GPT-4o powered workflows, secure authentication, document management, and Razorpay-based credit billing using Next.js, PostgreSQL, and Prisma.",
         imageUrl:"/arzaAi.png",
+        projectUrl:"https://arza-ai.vercel.app/",
         githubUrl:"https://github.com/sohaildevx/ArzaAi.git",
         technologies:["Next.js","TypeScript","Prisma","PostgreSQL","TailwindCSS","shadcn/ui","OpenAI GPT-4o API","Razorpay"]
     },
@@ -60,6 +61,7 @@ export const projects =[
         title:"Devin-Ai",
         description:"Full-stack AI Chatbot built with the MERN stack. Supports dynamic conversations, API-powered AI responses, and a responsive modern interface.",
         imageUrl:"/ai-Team-ChatBot.png",
+        projectUrl:"https://ai-realtime-chat-red.vercel.app/",
         githubUrl:"https://github.com/sohaildevx/Devin-Ai.git",
         technologies:["React","Node.js","Express","OpenAI GPT-4 API"]
     },
