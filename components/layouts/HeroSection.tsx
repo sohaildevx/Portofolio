@@ -3,13 +3,16 @@ import { skills } from "@/constants/skills";
 import { Button } from "../ui/button";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/constants/projects";
-import  Contact  from "@/components/layouts/Contact";
+import Contact from "@/components/layouts/Contact";
 import { GitHubCalendar } from "react-github-calendar";
 
 const HeroSection = () => {
   return (
     <section className="w-full flex flex-col justify-center items-center pt-10 sm:pt-20 px-4 sm:px-8 py-8">
-      <div className="flex flex-row justify-center items-center gap-3 sm:gap-8 w-full max-w-6xl" id="home">
+      <div
+        className="flex flex-row justify-center items-center gap-3 sm:gap-8 w-full max-w-6xl"
+        id="home"
+      >
         <div className="text-gray-900 dark:text-white flex flex-col items-start text-left">
           <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
             Hi, i'm Sohail{" "}
@@ -32,10 +35,16 @@ const HeroSection = () => {
 
       <div className="text-gray-900 dark:text-white mt-8 sm:mt-12 max-w-2xl w-full px-4">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
-          I'm a passionate Full Stack Developer with expertise in building
-          modern web applications. I love creating intuitive user experiences
-          and solving complex problems with clean, efficient code.
+
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base mb-4">
+          I'm a Full Stack Developer who builds and ships real products — not
+          just tutorial projects. From AI expense trackers to Marathi legal
+          document platforms, I've built full SaaS apps with auth, payments,
+          databases, and AI integrations.
+        </p>
+
+        <p className="text-green-600 dark:text-green-400 font-semibold text-sm sm:text-base">
+          🟢 Open to Internships & Full-Time Opportunities
         </p>
       </div>
 
@@ -133,7 +142,6 @@ const HeroSection = () => {
             />
           </div>
         </div>
-
 
         <Contact />
       </div>
