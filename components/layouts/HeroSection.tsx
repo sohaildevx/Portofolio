@@ -24,7 +24,7 @@ const HeroSection = () => {
 
         <div className="shrink-0">
           <Image
-            src="/Profile.jpeg"
+            src="/Profile.jpg"
             alt="Profile Image"
             width={200}
             height={200}
@@ -87,15 +87,19 @@ const HeroSection = () => {
               </h4>
 
               <div className="flex flex-wrap gap-2">
-                {skillList.map((skill) => (
-                  <Button
-                    key={skill}
-                    variant="outline"
-                    className="text-xs sm:text-sm bg-blue-500 dark:bg-white hover:bg-blue-600 dark:hover:bg-gray-100 border-blue-600 dark:border-white text-white dark:text-black"
-                  >
-                    {skill}
-                  </Button>
-                ))}
+                {skillList.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <Button
+                      key={skill.name}
+                      variant="outline"
+                      className="text-xs sm:text-sm bg-blue-500 dark:bg-white hover:bg-blue-600 dark:hover:bg-gray-100 border-blue-600 dark:border-white text-white dark:text-black"
+                    >
+                      {Icon && <Icon className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+                      {skill.name}
+                    </Button>
+                  );
+                })}
               </div>
             </div>
           ))}
