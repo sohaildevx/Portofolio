@@ -5,6 +5,7 @@ import ProjectCard from "./ProjectCard";
 import { projects } from "@/constants/projects";
 import Contact from "@/components/layouts/Contact";
 import { GitHubCalendar } from "react-github-calendar";
+import { SiGithub } from "react-icons/si";
 
 const HeroSection = () => {
   return (
@@ -129,7 +130,8 @@ const HeroSection = () => {
 
         <div className="mt-16 sm:mt-20 w-full text-center">
           <div className="space-y-3 mb-10">
-            <span className="inline-block rounded-full bg-gray-900 dark:bg-white px-4 py-1.5 text-xs sm:text-sm text-white dark:text-gray-900 font-semibold tracking-wide uppercase">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-900 dark:bg-white px-4 py-1.5 text-xs sm:text-sm text-white dark:text-gray-900 font-semibold tracking-wide uppercase">
+              <SiGithub className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               GitHub
             </span>
             <h2 className="font-bold text-gray-900 dark:text-white text-3xl tracking-tight sm:text-4xl md:text-5xl text-center">

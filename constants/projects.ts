@@ -49,6 +49,15 @@ export const projects =[
     },
     {
         id:5,
+        title:"MailCraft",
+        description:"An AI-powered email generator that turns job descriptions into personalized, send-ready emails in seconds. Built for job seekers who want to stand out without spending hours drafting cold emails.",
+        imageUrl:"/mailcraft.png",
+        projectUrl:"https://mail-craft-zeta.vercel.app/",
+        githubUrl:"https://github.com/sohaildevx/MailCraft.git",
+        technologies:["Next.js","TypeScript","Supabase","TailwindCSS","shadcn/ui","OpenAI API","Framer Motion"]
+    },
+    {
+        id:6,
         title:"Deal-Drop",
         description:"Smart price tracker that monitors e-commerce products and alerts you when prices drop. Built with Next.js & Supabase.",
         imageUrl:"/dealDrop.png",
@@ -57,7 +66,7 @@ export const projects =[
         technologies:["Next.js","Supabase","TailwindCSS","firecrawl"]
     },
     {
-        id:6,
+        id:7,
         title:"Devin-Ai",
         description:"Full-stack AI Chatbot built with the MERN stack. Supports dynamic conversations, API-powered AI responses, and a responsive modern interface.",
         imageUrl:"/ai-Team-ChatBot.png",
@@ -66,7 +75,7 @@ export const projects =[
         technologies:["React","Node.js","Express","OpenAI GPT-4 API"]
     },
     {
-        id:7,
+        id:8,
         title:"Ai-Code-Reviewer",
         description:"AI code reviewer with OpenAi, Gemini & Hugging Face. Instant feedback on quality, performance & security using Monaco editor. React + Node.js",
         imageUrl:"/Ai-CodeReview.png",
@@ -74,7 +83,7 @@ export const projects =[
         technologies:["React","Node.js","Express","OpenAI","Monaco Editor","Hugging Face","Gemini API"]
     },
     {
-        id:8,
+        id:9,
         title:"ChessGame",
         description:"Real-time multiplayer chess game built with Node.js, Express, Socket.IO, and Chess.js.",
         imageUrl:"/chessgame.png",
