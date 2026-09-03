@@ -83,6 +83,30 @@ const iconMap: Record<string, React.ComponentType<{ className?: string; size?: n
 
 const iconSize = "w-4 h-4";
 
+const techNames: Record<string, string> = {
+  next: "Next.js",
+  react: "React",
+  node: "Node.js",
+  typescript: "TypeScript",
+  prisma: "Prisma",
+  tailwind: "Tailwind CSS",
+  postgresql: "PostgreSQL",
+  framer: "Framer Motion",
+  cloudinary: "Cloudinary",
+  supabase: "Supabase",
+  socketio: "Socket.IO",
+  express: "Express",
+  mongodb: "MongoDB",
+  openai: "OpenAI",
+  razorpay: "Razorpay",
+  shadcn: "shadcn/ui",
+  firecrawl: "Firecrawl",
+  monaco: "Monaco Editor",
+  huggingface: "Hugging Face",
+  gemini: "Gemini",
+  chess: "Chess.js",
+};
+
 const ProjectCard = ({
   project,
   setActiveVideo,
@@ -92,6 +116,7 @@ const ProjectCard = ({
 }) => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -237,9 +262,20 @@ const ProjectCard = ({
                 return (
                   <div
                     key={key}
-                    className="p-1.5 rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                    className="relative"
+                    onMouseEnter={() => setHoveredTech(key)}
+                    onMouseLeave={() => setHoveredTech(null)}
                   >
-                    <Icon className={`${iconSize} text-neutral-500 dark:text-neutral-400`} />
+                    <div className="p-1.5 rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-default">
+                      <Icon className={`${iconSize} text-neutral-500 dark:text-neutral-400`} />
+                    </div>
+                    {hoveredTech === key && (
+                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
+                        <div className="bg-neutral-900 dark:bg-neutral-100 text-neutral-100 dark:text-neutral-900 text-[10px] px-2 py-1 rounded shadow-xl whitespace-nowrap font-medium">
+                          {techNames[key] || key}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
