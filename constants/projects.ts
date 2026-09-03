@@ -10,20 +10,21 @@ export interface Project {
     projectUrl?: string;
     githubUrl?: string;
     technologies: string[];
+    techIcons: string[];
 }
-
 
 export const projects = [
     {
         id: 1,
-        title: "ExpenseFlow: AI Expense Tracker",
+        title: "ExpenseFlow",
         description: "Full-stack MERN expense tracker with dual transport/personal modes, AI receipt scanning, monthly AI email reports, JWT auth, Razorpay payments, budgets, and analytics.",
         imageUrl: "/ExpenseTrackor.png",
         backgroundImage: "/Card-Bg-Image/image.png",
-        videoUrl: "",
+        videoUrl: "https://www.youtube.com/embed/PKNj-Y0IJnU?si=ftIRa2uE_j-PkeeQ",
         projectUrl: "https://myexpenseflow.vercel.app/",
         githubUrl: "https://github.com/sohaildevx/ExpenseFlow.git",
-        technologies: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS", "RazorPay"]
+        technologies: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS", "RazorPay"],
+        techIcons: ["react", "node", "express", "mongodb", "tailwind", "razorpay"]
     },
     {
         id: 2,
@@ -33,7 +34,8 @@ export const projects = [
         backgroundImage: "/Card-Bg-Image/image copy.png",
         videoUrl: "",
         githubUrl: "https://github.com/sohaildevx/Forgemate.git",
-        technologies: ["Next.js", "Node.js", "Express", "OpenAI API", "TypeScript", "Prisma", "PostgreSQL"]
+        technologies: ["Next.js", "Node.js", "Express", "OpenAI API", "TypeScript", "Prisma", "PostgreSQL"],
+        techIcons: ["next", "node", "express", "openai", "typescript", "prisma", "postgresql"]
     },
     {
         id: 3,
@@ -44,7 +46,8 @@ export const projects = [
         videoUrl: "",
         projectUrl: "https://cloudinary-saas.vercel.app/",
         githubUrl: "https://github.com/sohaildevx/vidora.git",
-        technologies: ["Next.js", "Cloudinary", "OpenAI Whisper", "PostgreSQL"]
+        technologies: ["Next.js", "Cloudinary", "OpenAI Whisper", "PostgreSQL"],
+        techIcons: ["next", "cloudinary", "openai", "postgresql"]
     },
     {
         id: 4,
@@ -55,7 +58,8 @@ export const projects = [
         videoUrl: "",
         projectUrl: "https://arza-ai.vercel.app/",
         githubUrl: "https://github.com/sohaildevx/ArzaAi.git",
-        technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "TailwindCSS", "shadcn/ui", "OpenAI GPT-4o API", "Razorpay"]
+        technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "TailwindCSS", "shadcn/ui", "OpenAI GPT-4o API", "Razorpay"],
+        techIcons: ["next", "typescript", "prisma", "postgresql", "tailwind", "shadcn", "openai", "razorpay"]
     },
     {
         id: 5,
@@ -66,7 +70,8 @@ export const projects = [
         videoUrl: "",
         projectUrl: "https://mail-craft-zeta.vercel.app/",
         githubUrl: "https://github.com/sohaildevx/MailCraft.git",
-        technologies: ["Next.js", "TypeScript", "Supabase", "TailwindCSS", "shadcn/ui", "OpenAI API", "Framer Motion"]
+        technologies: ["Next.js", "TypeScript", "Supabase", "TailwindCSS", "shadcn/ui", "OpenAI API", "Framer Motion"],
+        techIcons: ["next", "typescript", "supabase", "tailwind", "shadcn", "openai", "framer"]
     },
     {
         id: 6,
@@ -77,7 +82,8 @@ export const projects = [
         videoUrl: "",
         projectUrl: "https://deal-drop.vercel.app/",
         githubUrl: "https://github.com/sohaildevx/Deal-Drop.git",
-        technologies: ["Next.js", "Supabase", "TailwindCSS", "firecrawl"]
+        technologies: ["Next.js", "Supabase", "TailwindCSS", "firecrawl"],
+        techIcons: ["next", "supabase", "tailwind", "firecrawl"]
     },
     {
         id: 7,
@@ -88,7 +94,8 @@ export const projects = [
         videoUrl: "",
         projectUrl: "https://ai-realtime-chat-red.vercel.app/",
         githubUrl: "https://github.com/sohaildevx/Devin-Ai.git",
-        technologies: ["React", "Node.js", "Express", "OpenAI GPT-4 API"]
+        technologies: ["React", "Node.js", "Express", "OpenAI GPT-4 API"],
+        techIcons: ["react", "node", "express", "openai"]
     },
     {
         id: 8,
@@ -98,7 +105,8 @@ export const projects = [
         backgroundImage: "/Card-Bg-Image/image copy.png",
         videoUrl: "",
         githubUrl: "https://github.com/sohaildevx/Ai-Code-Review.git",
-        technologies: ["React", "Node.js", "Express", "OpenAI", "Monaco Editor", "Hugging Face", "Gemini API"]
+        technologies: ["React", "Node.js", "Express", "OpenAI", "Monaco Editor", "Hugging Face", "Gemini API"],
+        techIcons: ["react", "node", "express", "openai", "monaco", "huggingface", "gemini"]
     },
     {
         id: 9,
@@ -108,6 +116,7 @@ export const projects = [
         backgroundImage: "/Card-Bg-Image/image copy 2.png",
         videoUrl: "",
         githubUrl: "https://github.com/sohaildevx/Chess-Game.git",
-        technologies: ["Node.js", "Express", "Socket.IO", "Chess.js"]
+        technologies: ["Node.js", "Express", "Socket.IO", "Chess.js"],
+        techIcons: ["node", "express", "socketio", "chess"]
     }
 ]
