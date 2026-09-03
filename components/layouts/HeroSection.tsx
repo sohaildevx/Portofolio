@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { skills } from "@/constants/skills";
 import { hackathons } from "@/constants/hackathons";
@@ -8,8 +10,22 @@ import { projects } from "@/constants/projects";
 import Contact from "@/components/layouts/Contact";
 import { GitHubCalendar } from "react-github-calendar";
 import { SiGithub } from "react-icons/si";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import Link from "next/link";
 
 const HeroSection = () => {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveVideo(null);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
   return (
     <section className="w-full flex flex-col justify-center items-center pt-10 sm:pt-20 px-4 sm:px-8 py-8">
       <div
@@ -144,10 +160,29 @@ const HeroSection = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            {projects.slice(0, 4).map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                setActiveVideo={setActiveVideo}
+              />
             ))}
           </div>
+
+          
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex justify-center mt-8"
+          >
+            <Link href="/projects">
+              <Button className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 text-sm font-medium px-8 py-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer">
+                View All Projects
+              </Button>
+            </Link>
+          </motion.div>
         </div>
 
         <div className="mt-16 sm:mt-20 w-full text-center">
@@ -173,6 +208,50 @@ const HeroSection = () => {
 
         <Contact />
       </div>
+
+     
+      <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveVideo(null)}
+            className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 cursor-pointer p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative bg-black rounded-xl overflow-hidden w-full max-w-3xl shadow-2xl"
+            >
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute top-3 right-3 p-2 bg-zinc-800/80 hover:bg-zinc-700 rounded-full cursor-pointer transition-colors z-50"
+              >
+                <X size={20} className="text-zinc-200" />
+              </button>
+
+              {activeVideo.includes("youtube") || activeVideo.includes("youtu.be") ? (
+                <iframe
+                  src={activeVideo}
+                  className="w-full aspect-video border-0"
+                  allowFullScreen
+                  allow="autoplay; encrypted-media"
+                />
+              ) : (
+                <video
+                  src={activeVideo}
+                  className="w-full h-auto"
+                  controls
+                  autoPlay
+                />
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
