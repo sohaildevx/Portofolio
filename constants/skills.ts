@@ -13,6 +13,7 @@ import {
   SiGit,
   SiGithub,
   SiPostman,
+  SiDocker,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -42,5 +43,6 @@ export const skills: Record<string, Skill[]> = {
     { name: "GitHub", icon: SiGithub },
     { name: "VS Code", icon: VscVscode },
     { name: "Postman", icon: SiPostman },
+    { name: "Docker", icon: SiDocker },
   ],
 };
