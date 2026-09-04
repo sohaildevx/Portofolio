@@ -134,11 +134,15 @@ const ProjectCard = ({
     return () => clearTimeout(timer);
   }, [isActive]);
 
-  const handleCardTap = useCallback(() => {
-    if (isMobile) {
+  const handleCardTap = useCallback(
+    (e: MouseEvent | TouchEvent | PointerEvent) => {
+      if (!isMobile) return;
+      const target = e.target as HTMLElement;
+      if (target.closest("[data-video-btn]")) return;
       setIsActive((prev) => !prev);
-    }
-  }, [isMobile]);
+    },
+    [isMobile]
+  );
 
   const imageSrc =
     mounted && theme === "light" && project.lightModeSrc
@@ -212,7 +216,16 @@ const ProjectCard = ({
                 e.stopPropagation();
                 setActiveVideo(project.videoUrl!);
               }}
-              className="absolute inset-0 z-40 flex items-center justify-center pointer-events-none group-hover:pointer-events-auto cursor-pointer"
+              onTap={(e) => {
+                e.stopPropagation();
+                setActiveVideo(project.videoUrl!);
+              }}
+              data-video-btn
+              className={`absolute inset-0 z-40 flex items-center justify-center cursor-pointer ${
+                isMobile && isActive
+                  ? "pointer-events-auto"
+                  : "pointer-events-none group-hover:pointer-events-auto"
+              }`}
               variants={{
                 rest: { scale: 0.5, opacity: 0 },
                 hover: { scale: 1, opacity: 1 },
