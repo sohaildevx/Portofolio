@@ -8,7 +8,7 @@ import ProjectCard from "./ProjectCard";
 import HackathonCard from "./HackathonCard";
 import { projects } from "@/constants/projects";
 import Contact from "@/components/layouts/Contact";
-import { GitHubCalendar } from "react-github-calendar";
+import GithubGraph from "./GithubGraph";
 import { SiGithub } from "react-icons/si";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -196,14 +196,7 @@ const HeroSection = () => {
             </h2>
           </div>
 
-          <div className="flex justify-center overflow-x-auto">
-            <GitHubCalendar
-              username="sohaildevx"
-              fontSize={14}
-              blockSize={12}
-              blockMargin={4}
-            />
-          </div>
+          <GithubGraph />
         </div>
 
         <Contact />
