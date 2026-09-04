@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { motion } from "framer-motion";
 import {
-  Card,
   CardTitle,
   CardDescription,
   CardContent,
@@ -41,6 +41,27 @@ interface HackathonCardProps {
 
 const HackathonCard = ({ hackathon }: HackathonCardProps) => {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isActive) return;
+    const timer = setTimeout(() => setIsActive(false), 3000);
+    return () => clearTimeout(timer);
+  }, [isActive]);
+
+  const handleCardTap = useCallback(() => {
+    if (isMobile) {
+      setIsActive((prev) => !prev);
+    }
+  }, [isMobile]);
 
   const getIconKey = (tech: string): string | null => {
     const lower = tech.toLowerCase();
@@ -51,8 +72,15 @@ const HackathonCard = ({ hackathon }: HackathonCardProps) => {
     return null;
   };
 
+  const hoverClass = isMobile && isActive
+    ? "border-neutral-300 dark:border-neutral-700 shadow-2xl shadow-neutral-500/5 -translate-y-1"
+    : "";
+
   return (
-    <Card className="group relative z-10 bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 overflow-hidden p-0 gap-0 w-full h-full flex flex-col rounded-2xl hover:shadow-2xl hover:shadow-neutral-500/5 hover:-translate-y-1">
+    <motion.div
+      className={`group relative z-10 bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 transition-all duration-300 overflow-hidden p-0 gap-0 w-full h-full flex flex-col rounded-2xl hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-2xl hover:shadow-neutral-500/5 hover:-translate-y-1 ${hoverClass}`}
+      onTap={handleCardTap}
+    >
       <CardHeader className="px-5 sm:px-6 pt-5 pb-1">
         <div className="flex items-center gap-2 mb-1">
           <span className="text-xs font-medium text-blue-600 dark:text-blue-400 uppercase tracking-wide">
@@ -144,7 +172,7 @@ const HackathonCard = ({ hackathon }: HackathonCardProps) => {
           </Link>
         )}
       </CardFooter>
-    </Card>
+    </motion.div>
   );
 };
 

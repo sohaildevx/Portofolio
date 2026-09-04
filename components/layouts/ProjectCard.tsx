@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -117,22 +117,43 @@ const ProjectCard = ({
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  useEffect(() => {
+    if (!isActive) return;
+    const timer = setTimeout(() => setIsActive(false), 3000);
+    return () => clearTimeout(timer);
+  }, [isActive]);
+
+  const handleCardTap = useCallback(() => {
+    if (isMobile) {
+      setIsActive((prev) => !prev);
+    }
+  }, [isMobile]);
 
   const imageSrc =
     mounted && theme === "light" && project.lightModeSrc
       ? project.lightModeSrc
       : project.imageUrl;
 
+  const animateState = isMobile && isActive ? "hover" : "rest";
+
   return (
     <motion.div
       className="group relative z-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-3 transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700 bg-white dark:bg-black hover:shadow-2xl hover:shadow-neutral-500/5"
       initial="rest"
       whileHover="hover"
-      animate="rest"
+      animate={animateState}
+      onTap={handleCardTap}
     >
       <div className="flex w-full flex-col gap-4">
         
