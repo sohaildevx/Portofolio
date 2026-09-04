@@ -11,12 +11,40 @@ interface TooltipPayload {
   date: string;
 }
 
+interface CalendarSize {
+  blockSize: number;
+  blockMargin: number;
+  fontSize: number;
+}
+
 const GithubGraph = () => {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [calendarSize, setCalendarSize] = useState<CalendarSize>({
+    blockSize: 12,
+    blockMargin: 4,
+    fontSize: 12,
+  });
 
   useEffect(() => {
     setMounted(true);
+
+    const updateSize = () => {
+      const width = window.innerWidth;
+      if (width < 480) {
+        setCalendarSize({ blockSize: 8, blockMargin: 2, fontSize: 10 });
+      } else if (width < 640) {
+        setCalendarSize({ blockSize: 10, blockMargin: 3, fontSize: 11 });
+      } else if (width < 768) {
+        setCalendarSize({ blockSize: 11, blockMargin: 3, fontSize: 12 });
+      } else {
+        setCalendarSize({ blockSize: 12, blockMargin: 4, fontSize: 12 });
+      }
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   if (!mounted) {
@@ -38,23 +66,25 @@ const GithubGraph = () => {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="inline-block text-center">
-        <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base mb-6 italic">
+      <div className="inline-block text-center max-w-full overflow-x-auto">
+        <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base mb-4 sm:mb-6 italic px-4">
           I love spending time in open source, building real stuff and solving real problems
         </p>
-        <GitHubCalendar
-          username="sohaildevx"
-          colorScheme={colorScheme}
-          fontSize={12}
-          blockSize={12}
-          blockMargin={4}
-          renderBlock={renderBlock}
-          showTotalCount
-          showColorLegend
-          labels={{
-            totalCount: "{{count}} contributions in the last year",
-          }}
-        />
+        <div className="flex justify-center min-w-0">
+          <GitHubCalendar
+            username="sohaildevx"
+            colorScheme={colorScheme}
+            fontSize={calendarSize.fontSize}
+            blockSize={calendarSize.blockSize}
+            blockMargin={calendarSize.blockMargin}
+            renderBlock={renderBlock}
+            showTotalCount
+            showColorLegend
+            labels={{
+              totalCount: "{{count}} contributions in the last year",
+            }}
+          />
+        </div>
         <Tooltip
           id="github-tooltip"
           className="!rounded-lg !px-3 !py-2 !text-xs !font-medium !border !shadow-sm z-50"
