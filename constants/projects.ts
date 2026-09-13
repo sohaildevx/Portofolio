@@ -67,7 +67,7 @@ export const projects = [
         description: "An AI-powered email generator that turns job descriptions into personalized, send-ready emails in seconds. Built for job seekers who want to stand out.",
         imageUrl: "/mailcraft.png",
         backgroundImage: "/Card-Bg-Image/image copy 4.png",
-        videoUrl: "",
+        videoUrl: "https://www.youtube.com/embed/cuOIzpGdaVU?si=N7RZYDaWNJgtRBkU",
         projectUrl: "https://mail-craft-zeta.vercel.app/",
         githubUrl: "https://github.com/sohaildevx/MailCraft.git",
         technologies: ["Next.js", "TypeScript", "Supabase", "TailwindCSS", "shadcn/ui", "OpenAI API", "Framer Motion"],

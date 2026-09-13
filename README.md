@@ -2,45 +2,44 @@
 
 A modern, responsive portfolio website built with Next.js 16, showcasing my projects, skills, and experience as a Full Stack Developer.
 
-![Profile](./public/Images/profile.png)
+## Demo Video
+
+[![Demo Video](https://img.youtube.com/vi/0Oz8yoggC1g/maxresdefault.jpg)](https://youtu.be/0Oz8yoggC1g)
 
 ## Features
 
 - Modern Dark/Light Theme - Seamless theme switching with next-themes
 - Fully Responsive - Optimized for all device sizes (mobile, tablet, desktop)
 - Smooth Navigation - Floating toolbar with smooth scrolling to sections
-- Project Showcase - Display of featured projects with live demos and GitHub links
+- Project Showcase - Display of featured projects with Framer Motion hover effects
+- GitHub Contributions Graph - Interactive contribution calendar with theme support
 - Contact Form - Integrated contact form with email functionality using Nodemailer
 - Skills Section - Organized display of frontend, backend, and tool proficiencies
 - Education Information - Current academic background and achievements
 - Social Links - Quick access to GitHub, LinkedIn, and Twitter profiles
-
-## Screenshots
-
-### Projects Section
-![Projects](./public/Images/project.png)
-
-### Contact Section
-![Contact](./public/Images/Conatact.png)
 
 ## Tech Stack
 
 ### Frontend
 - **Next.js 16.1.0** - React framework with App Router
 - **React 19.2.3** - UI library
-- **TypeScript** - Type-safe development
+- **TypeScript 5** - Type-safe development
 - **Tailwind CSS 4** - Utility-first CSS framework
+- **Framer Motion 13** - Animation library for hover effects and transitions
 - **Radix UI** - Accessible component primitives
 - **Lucide React** - Beautiful icon library
+- **React Icons** - Comprehensive icon library
 - **next-themes** - Theme management system
+- **react-github-calendar** - GitHub contribution graph
+- **react-tooltip** - Tooltip components
 
 ### Backend
 - **Node.js** - Server runtime
-- **Nodemailer** - Email sending functionality
+- **Nodemailer 7** - Email sending functionality
 - **Next.js API Routes** - Serverless API endpoints
 
 ### Development Tools
-- **ESLint** - Code linting
+- **ESLint 9** - Code linting
 - **PostCSS** - CSS processing
 - **TypeScript 5** - Type checking
 
@@ -55,26 +54,18 @@ A modern, responsive portfolio website built with Next.js 16, showcasing my proj
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/sohailshaikh7860/portofolio.git
+git clone https://github.com/sohaildevx/portofolio.git
 cd portofolio
 ```
 
 2. Install dependencies:
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
 3. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
@@ -101,6 +92,8 @@ portofolio/
 │   ├── layouts/
 │   │   ├── Contact.tsx           # Contact form component
 │   │   ├── FloatingToolbar.tsx   # Navigation toolbar
+│   │   ├── GithubGraph.tsx       # GitHub contributions graph
+│   │   ├── HackathonCard.tsx     # Hackathon card component
 │   │   ├── HeroSection.tsx       # Main hero section
 │   │   ├── ProjectCard.tsx       # Project card component
 │   │   ├── theme-provider.tsx    # Theme provider wrapper
@@ -110,6 +103,7 @@ portofolio/
 │       ├── card.tsx              # Reusable card component
 │       └── dropdown-menu.tsx     # Dropdown menu component
 ├── constants/
+│   ├── hackathons.ts             # Hackathon data
 │   ├── projects.ts               # Project data
 │   └── skills.ts                 # Skills data
 ├── lib/
@@ -119,82 +113,9 @@ portofolio/
 └── README.md
 ```
 
-## Key Features Breakdown
-
-### Theme Switching
-- Toggle between light and dark modes
-- Persistent theme preference using localStorage
-- System theme detection
-- Smooth transitions between themes
-- All components fully themed
-
-### Floating Toolbar
-- Smooth scroll navigation to different sections
-- Theme toggle button with sun/moon icon animation
-- Links to social media profiles (GitHub, LinkedIn, Twitter)
-- Responsive design with hover effects and tooltips
-- Fixed positioning for easy access
-- Adapts colors based on active theme
-
-### Projects Section
-- **Expense Tracker** - Full-stack MERN application with JWT auth and Razorpay integration
-- **Chat Application** - Real-time chat with Socket.io, rooms, and media sharing
-- Each project includes:
-  - Live demo link
-  - GitHub repository link
-  - Technology stack badges
-  - Project description
-  - Theme-aware styling
-
-### Skills Display
-- **Frontend:** React, Next.js, JavaScript, TypeScript, Tailwind CSS
-- **Backend:** Node.js, Express, MongoDB, SQL, RESTful APIs
-- **Tools:** Git, GitHub, VS Code, Postman
-- Interactive skill buttons with theme-aware colors
-
-### Contact Form
-- Server-side email handling
-- Form validation
-- Responsive design
-- Error handling
-- Theme-aware styling
-
-## Customization
-
-### Updating Projects
-Edit `constants/projects.ts` to add or modify projects:
-
-```typescript
-export const projects = [
-  {
-    id: 1,
-    title: "Your Project",
-    description: "Project description",
-    imageUrl: "/project-image.png",
-    projectUrl: "https://project-url.com",
-    githubUrl: "https://github.com/username/repo",
-    technologies: ["React", "Node.js"]
-  }
-]
-```
-
-### Updating Skills
-Edit `constants/skills.ts` to modify your skills:
-
-```typescript
-export const skills = {
-  frontend: ["React", "Next.js", ...],
-  backend: ["Node.js", "Express", ...],
-  tools: ["Git", "VS Code", ...]
-}
-```
-
-### Customizing Theme Colors
-Edit `app/globals.css` to modify theme colors for both light and dark modes.
-
 ## Links
 
-- **GitHub:** [@sohailshaikh7860](https://github.com/sohailshaikh7860)
+- **GitHub:** [@sohaildevx](https://github.com/sohaildevx)
 - **LinkedIn:** [Sohail Shaikh](https://linkedin.com/in/sohailshaikh786)
 - **Twitter:** [@Sohaildevs](https://twitter.com/Sohaildevs)
 
@@ -204,7 +125,7 @@ This project is open source and available for personal use.
 
 ## About Me
 
-Hi! I'm Sohail Shaikh, a passionate Full Stack Developer currently pursuing Bachelor of Science in Computer Science at New Arts, Commerce and Science College, Parner (2023-2026). I love creating intuitive user experiences and solving complex problems with clean, efficient code.
+Hi! I'm Sohail Shaikh, a Full Stack Developer. I love building real products and solving real problems with clean, efficient code.
 
 ## Contributing
 
