@@ -8,6 +8,7 @@ import ProjectCard from "./ProjectCard";
 import HackathonCard from "./HackathonCard";
 import { projects } from "@/constants/projects";
 import Contact from "@/components/layouts/Contact";
+import Education from "./Education";
 import GithubGraph from "./GithubGraph";
 import { SiGithub } from "react-icons/si";
 import { useState, useEffect } from "react";
@@ -34,9 +35,9 @@ const HeroSection = () => {
           className="overflow-hidden"
           style={{
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 70%, transparent 100%)",
+              "linear-gradient(to bottom, black 85%, transparent 100%)",
             maskImage:
-              "linear-gradient(to bottom, black 70%, transparent 100%)",
+              "linear-gradient(to bottom, black 85%, transparent 100%)",
           }}
         >
           <Image
@@ -93,33 +94,9 @@ const HeroSection = () => {
         </p>
       </div>
 
-      <div className="text-gray-900 dark:text-white mt-8 sm:mt-12 max-w-2xl w-full px-4">
-        <h2 className="text-xl sm:text-2xl font-bold mb-4">Education</h2>
+      <Education />
 
-        <div className="relative bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg hover:border-gray-300 dark:hover:border-zinc-600 transition-all duration-500 overflow-hidden">
-          <div className="absolute top-0 left-0 w-1.5 h-full bg-gray-900 dark:bg-white rounded-l-2xl"></div>
-
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white leading-snug">
-                New Arts, Commerce and Science College, Parner
-              </h3>
-              <p className="text-gray-500 dark:text-zinc-400 text-xs sm:text-sm mt-1">
-                Bachelor of Science in Computer Science
-              </p>
-            </div>
-            <span className="inline-flex items-center bg-gray-100 dark:bg-zinc-800/80 text-gray-600 dark:text-zinc-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-gray-200/80 dark:border-zinc-700/50 shrink-0">
-              2023 - 2026
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2 mt-4 pt-4 border-t border-gray-100 dark:border-zinc-800/80">
-            <span className="inline-flex items-center gap-1.5 bg-gray-100 dark:bg-zinc-800/80 text-gray-600 dark:text-zinc-300 px-3 py-1 rounded-full text-xs font-medium border border-gray-200/80 dark:border-zinc-700/50">
-              Currently in Third Year
-            </span>
-          </div>
-        </div>
-
+      <div className="text-gray-900 dark:text-white max-w-2xl w-full px-4">
         <div className="text-gray-900 dark:text-white mt-8 sm:mt-12 w-full">
           <h3 className="font-bold text-xl sm:text-2xl mb-4">Skills</h3>
           {Object.entries(skills).map(([category, skillList]) => (
