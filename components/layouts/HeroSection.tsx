@@ -27,14 +27,40 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="w-full flex flex-col justify-center items-center pt-10 sm:pt-20 px-4 sm:px-8 py-8">
+    <>
+    <div className="w-full px-4 sm:px-8">
+      <div className="w-full max-w-[800px] mx-auto">
+        <div
+          className="overflow-hidden"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 70%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, black 70%, transparent 100%)",
+          }}
+        >
+          <Image
+            src="/dither/dither_samurai_banner.gif"
+            alt="Dithered samurai resting under a starry night sky"
+            width={1489}
+            height={412}
+            sizes="(max-width: 800px) 100vw, 800px"
+            unoptimized
+            priority
+            className="w-full h-auto block bg-black"
+          />
+        </div>
+      </div>
+    </div>
+
+      <section className="w-full flex flex-col justify-center items-center pt-8 sm:pt-14 px-4 sm:px-8 py-8">
       <div
         className="flex flex-row justify-center items-center gap-3 sm:gap-8 w-full max-w-6xl"
         id="home"
       >
         <div className="text-gray-900 dark:text-white flex flex-col items-start text-left">
           <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Hi, i'm Sohail{" "}
+            Hi, I'm Sohail
           </h1>
           <p className="pt-1 sm:pt-2 text-sm sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
             Full Stack Developer
@@ -246,6 +272,7 @@ const HeroSection = () => {
         )}
       </AnimatePresence>
     </section>
+    </>
   );
 };
 
