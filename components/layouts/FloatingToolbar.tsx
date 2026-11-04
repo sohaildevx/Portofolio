@@ -39,7 +39,7 @@ const FloatingToolbar = () => {
         <div className="relative group">
           <button
             onClick={() => scrollToSection("contact")}
-            aria-label="Projects"
+            aria-label="Contact"
             className="p-2.5 md:p-3.5 rounded-full text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-110 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900"
           >
             <Contact className="w-5 h-5 md:w-6 md:h-6" />

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { skills } from "@/constants/skills";
 import { hackathons } from "@/constants/hackathons";
 import { Button } from "../ui/button";
+import Section from "../ui/Section";
 import ProjectCard from "./ProjectCard";
 import HackathonCard from "./HackathonCard";
 import { projects } from "@/constants/projects";
@@ -29,105 +30,103 @@ const HeroSection = () => {
 
   return (
     <>
-    <div className="w-full px-4 sm:px-8">
-      <div className="w-full max-w-[800px] mx-auto">
-        <div
-          className="overflow-hidden"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to bottom, black 85%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to bottom, black 85%, transparent 100%)",
-          }}
-        >
-          <Image
-            src="/dither/dither_samurai_banner.gif"
-            alt="Dithered samurai resting under a starry night sky"
-            width={1489}
-            height={412}
-            sizes="(max-width: 800px) 100vw, 800px"
-            unoptimized
-            priority
-            className="w-full h-auto block bg-black"
-          />
-        </div>
-      </div>
-    </div>
-
-      <section className="w-full flex flex-col justify-center items-center pt-8 sm:pt-14 px-4 sm:px-8 py-8">
+      
       <div
-        className="flex flex-row justify-center items-center gap-3 sm:gap-8 w-full max-w-6xl"
-        id="home"
+        className="w-full overflow-hidden"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 85%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to bottom, black 85%, transparent 100%)",
+        }}
       >
-        <div className="text-gray-900 dark:text-white flex flex-col items-start text-left">
-          <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Hi, I'm Sohail
-          </h1>
-          <p className="pt-1 sm:pt-2 text-sm sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
-            Full Stack Developer
-          </p>
-        </div>
-
-        <div className="shrink-0">
-          <Image
-            src="/Profile.jpg"
-            alt="Profile Image"
-            width={200}
-            height={200}
-            className="rounded-full w-20 h-20 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 object-cover"
-          />
-        </div>
+        <Image
+          src="/dither/dither_samurai_banner.gif"
+          alt="Dithered samurai resting under a starry night sky"
+          width={1489}
+          height={412}
+          sizes="(max-width: 896px) 100vw, 896px"
+          unoptimized
+          priority
+          className="w-full h-auto block bg-black"
+        />
       </div>
 
-      <div className="text-gray-900 dark:text-white mt-8 sm:mt-12 max-w-2xl w-full px-4">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
+     
+      <Section id="home">
+        <div className="flex flex-row justify-center items-center gap-3 sm:gap-8 w-full">
+          <div className="text-gray-900 dark:text-white flex flex-col items-start text-left">
+            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              Hi, I&apos;m Sohail
+            </h1>
+            <p className="pt-1 sm:pt-2 text-sm sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
+              Full Stack Developer
+            </p>
+          </div>
 
+          <div className="shrink-0">
+            <Image
+              src="/Profile.jpg"
+              alt="Profile Image"
+              width={200}
+              height={200}
+              className="rounded-full w-20 h-20 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 object-cover"
+            />
+          </div>
+        </div>
+      </Section>
+
+      
+      <Section title="About Me">
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base mb-4">
-          I'm a Full Stack Developer who builds and ships real products — not
-          just tutorial projects. From AI expense trackers to Marathi legal
-          document platforms, I've built full SaaS apps with auth, payments,
-          databases, and AI integrations.
+          I&apos;m a Full Stack Developer who builds and ships real products —
+          not just tutorial projects. From AI expense trackers to Marathi legal
+          document platforms, I&apos;ve built full SaaS apps with auth,
+          payments, databases, and AI integrations.
         </p>
 
         <p className="text-green-600 dark:text-green-400 font-semibold text-sm sm:text-base">
           🟢 Open to Internships & Full-Time Opportunities
         </p>
-      </div>
+      </Section>
 
-      <Education />
+      
+      <Section id="education" title="Education">
+        <Education />
+      </Section>
 
-      <div className="text-gray-900 dark:text-white max-w-2xl w-full px-4">
-        <div className="text-gray-900 dark:text-white mt-8 sm:mt-12 w-full">
-          <h3 className="font-bold text-xl sm:text-2xl mb-4">Skills</h3>
-          {Object.entries(skills).map(([category, skillList]) => (
-            <div
-              key={category}
-              className="mb-4 sm:mb-6 flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4"
-            >
-              <h4 className="text-sm sm:text-lg font-semibold capitalize text-gray-600 dark:text-gray-400 sm:min-w-25 pt-2">
-                {category}:
-              </h4>
+      
+      <Section id="skills" title="Skills">
+        {Object.entries(skills).map(([category, skillList]) => (
+          <div
+            key={category}
+            className="mb-4 sm:mb-6 last:mb-0 flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4"
+          >
+            <h4 className="text-sm sm:text-lg font-semibold capitalize text-gray-600 dark:text-gray-400 sm:min-w-25 pt-2">
+              {category}:
+            </h4>
 
-              <div className="flex flex-wrap gap-2">
-                {skillList.map((skill) => {
-                  const Icon = skill.icon;
-                  return (
-                    <Button
-                      key={skill.name}
-                      variant="outline"
-                      className="text-xs sm:text-sm bg-blue-500 dark:bg-white hover:bg-blue-600 dark:hover:bg-gray-100 border-blue-600 dark:border-white text-white dark:text-black"
-                    >
-                      {Icon && <Icon className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />}
-                      {skill.name}
-                    </Button>
-                  );
-                })}
-              </div>
+            <div className="flex flex-wrap gap-2">
+              {skillList.map((skill) => {
+                const Icon = skill.icon;
+                return (
+                  <span
+                    key={skill.name}
+                    className="inline-flex items-center gap-1.5 rounded-md border border-blue-600 dark:border-white bg-blue-500 dark:bg-white px-3 py-1.5 text-xs sm:text-sm font-medium text-white dark:text-black"
+                  >
+                    {Icon && <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+                    {skill.name}
+                  </span>
+                );
+              })}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </Section>
 
-        <div className="mt-16 text-center sm:mt-20 w-full" id="hackathons">
+      {/* Hackathons */}
+      <Section id="hackathons">
+        <div className="w-full text-center">
           <div className="space-y-3 mb-12">
             <span className="inline-block rounded-full bg-gray-900 dark:bg-white px-4 py-1.5 text-xs sm:text-sm text-white dark:text-gray-900 font-semibold tracking-wide uppercase">
               Hackathons
@@ -136,7 +135,8 @@ const HeroSection = () => {
               Hackathon Participation
             </h2>
             <p className="text-gray-500 dark:text-zinc-400 text-sm sm:text-base md:text-lg max-w-xl mx-auto text-center leading-relaxed">
-              Building innovative solutions under time pressure with talented teams.
+              Building innovative solutions under time pressure with talented
+              teams.
             </p>
           </div>
 
@@ -146,8 +146,11 @@ const HeroSection = () => {
             ))}
           </div>
         </div>
+      </Section>
 
-        <div className="mt-16 text-center sm:mt-20 w-full" id="projects">
+      {/* Projects */}
+      <Section id="projects">
+        <div className="w-full text-center">
           <div className="space-y-3 mb-12">
             <span className="inline-block rounded-full bg-gray-900 dark:bg-white px-4 py-1.5 text-xs sm:text-sm text-white dark:text-gray-900 font-semibold tracking-wide uppercase">
               Projects
@@ -172,7 +175,6 @@ const HeroSection = () => {
             ))}
           </div>
 
-          
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -187,8 +189,11 @@ const HeroSection = () => {
             </Link>
           </motion.div>
         </div>
+      </Section>
 
-        <div className="mt-16 sm:mt-20 w-full text-center">
+      {/* GitHub */}
+      <Section>
+        <div className="w-full text-center">
           <div className="space-y-3 mb-10">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-900 dark:bg-white px-4 py-1.5 text-xs sm:text-sm text-white dark:text-gray-900 font-semibold tracking-wide uppercase">
               <SiGithub className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -201,11 +206,13 @@ const HeroSection = () => {
 
           <GithubGraph />
         </div>
+      </Section>
 
+      {/* Contact */}
+      <Section>
         <Contact />
-      </div>
+      </Section>
 
-     
       <AnimatePresence>
         {activeVideo && (
           <motion.div
@@ -224,6 +231,7 @@ const HeroSection = () => {
             >
               <button
                 onClick={() => setActiveVideo(null)}
+                aria-label="Close video"
                 className="absolute top-3 right-3 p-2 bg-zinc-800/80 hover:bg-zinc-700 rounded-full cursor-pointer transition-colors z-50"
               >
                 <X size={20} className="text-zinc-200" />
@@ -248,7 +256,6 @@ const HeroSection = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
     </>
   );
 };
