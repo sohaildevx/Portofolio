@@ -17,7 +17,7 @@ export const projects = [
     {
         id: 1,
         title: "ExpenseFlow",
-        description: "Full-stack MERN expense tracker with dual transport/personal modes, AI receipt scanning, monthly AI email reports, JWT auth, Razorpay payments, budgets, and analytics.",
+        description: "ExpenseFlow is a dual-mode expense tracker for personal and transport use, with AI receipt scanning and automated month-end summaries.",
         imageUrl: "/ExpenseTrackor.png",
         backgroundImage: "/Card-Bg-Image/image.png",
         videoUrl: "https://www.youtube.com/embed/PKNj-Y0IJnU?si=ftIRa2uE_j-PkeeQ",
@@ -29,7 +29,7 @@ export const projects = [
     {
         id: 2,
         title: "Forgemate",
-        description: "Full-stack AI CLI agent: Chat with OpenAI models, execute tools, and generate complete applications from descriptions. Device-flow authentication, conversation persistence, and Next.js dashboard.",
+        description: "ForgeMate is a CLI AI agent with multi-model support for chat, web search, and automated project scaffolding from the terminal.",
         imageUrl: "/Cli-Ai-Agent.png",
         backgroundImage: "/Card-Bg-Image/image copy.png",
         videoUrl: "",
@@ -40,7 +40,7 @@ export const projects = [
     {
         id: 3,
         title: "Vidora",
-        description: "AI-powered media SaaS featuring smart reel generation, auto-compression, subtitle generation via OpenAI Whisper, and intelligent image formatting.",
+        description: "AI-powered video platform for compression, subtitle generation, and social-ready reel creation",
         imageUrl: "/vidora.png",
         backgroundImage: "/Card-Bg-Image/image copy 2.png",
         videoUrl: "https://www.youtube.com/embed/jnP5RoV68co?si=3ymX8Bxw5Ocn9x1T",
@@ -52,7 +52,7 @@ export const projects = [
     {
         id: 4,
         title: "ArzaAi",
-        description: "Built a full-stack AI legal SaaS that generates Marathi legal documents across 20+ categories, including affidavits, FIR requests, complaints, and official applications.",
+        description: "A full-stack AI SaaS that drafts Marathi legal documents from plain-language user inputs across 20+ categories.",
         imageUrl: "/arzaAi.png",
         backgroundImage: "/Card-Bg-Image/image copy 3.png",
         videoUrl: "https://www.youtube.com/embed/OaVTUp5sw7c?si=k7GUYtqZ5tkKydCs",
@@ -64,7 +64,7 @@ export const projects = [
     {
         id: 5,
         title: "MailCraft",
-        description: "An AI-powered email generator that turns job descriptions into personalized, send-ready emails in seconds. Built for job seekers who want to stand out.",
+        description: "AI-powered email generator — describe your goal, pick a tone, get a send-ready email in seconds.",
         imageUrl: "/mailcraft.png",
         backgroundImage: "/Card-Bg-Image/image copy 4.png",
         videoUrl: "https://www.youtube.com/embed/cuOIzpGdaVU?si=N7RZYDaWNJgtRBkU",
@@ -76,7 +76,7 @@ export const projects = [
     {
         id: 6,
         title: "Deal-Drop",
-        description: "Smart price tracker that monitors e-commerce products and alerts you when prices drop. Built with Next.js & Supabase.",
+        description: "Deal Droper tracks your bucket list and sends email notifications when your target deal becomes available.",
         imageUrl: "/dealDrop.png",
         backgroundImage: "/Card-Bg-Image/image copy 5.png",
         videoUrl: "",
